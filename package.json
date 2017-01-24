@@ -1,12 +1,16 @@
 {
   "name": "html-node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Information about the node types used in HTML",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [ "html", "metadata", "hinfo" ],
+  "keywords": [
+    "html",
+    "metadata",
+    "hinfo"
+  ],
   "author": "Nik Coughlin <nrkn.com@gmail.com>",
   "license": "MIT",
   "dependencies": {

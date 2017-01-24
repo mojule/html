@@ -3,20 +3,20 @@
 const hinfo = require( 'hinfo' )
 
 const nodeDefs = {
-  "#document": {
-    "content": [ "#documentType", "<html>" ]
+  '#document': {
+    'content': [ '#documentType', '<html>' ]
   },
-  "#documentType": {
-    "parent": [ "#document" ]
+  '#documentType': {
+    'parent': [ '#document' ]
   },
-  "#text": {
-    "categories": [ "flow content", "phrasing content", "palpable content" ]
+  '#text': {
+    'categories': [ 'flow content', 'phrasing content', 'palpable content' ]
   },
   '#comment': {
-    "categories": [ "flow content" ]
+    'categories': [ 'flow content' ]
   },
   '#documentFragment': {
-    "content": [ "flow content" ]
+    'content': [ 'flow content' ]
   }
 }
 
