@@ -75,7 +75,7 @@ var Html = function Html() {
 
     if (childDef.parent.includes('<' + tagName + '>')) return true;
 
-    if (def.content.includes('<' + childTagName + '>') || def.content.includes('#' + childTagName)) return true;
+    if (def.content.includes('<' + childTagName + '>') || def.content.includes('#' + childTagName) || def.content.includes(childTagName)) return true;
 
     return childDef.categories.some(function (category) {
       return def.content.includes(category);

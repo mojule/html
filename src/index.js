@@ -58,14 +58,15 @@ const Html = ( defs = defaultDefs ) => {
     const def = defs[ tagName ]
     const childDef = defs[ childTagName ]
 
-    if( def.content.includes( '*') )
+    if( def.content.includes( '*' ) )
       return true
 
     if( childDef.parent.includes( `<${ tagName }>` ) ) return true
 
     if(
       def.content.includes( `<${ childTagName }>` ) ||
-      def.content.includes( `#${ childTagName }` )
+      def.content.includes( `#${ childTagName }` ) ||
+      def.content.includes( childTagName )
     ) return true
 
     return childDef.categories.some( category =>
