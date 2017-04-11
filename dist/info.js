@@ -19,7 +19,7 @@ module.exports = {
 
   "title": {
     "categories": ["metadata content"],
-    "content": ["text"],
+    "content": ["#text"],
     "parent": ["<head>"],
     "singular": true
   },
@@ -38,7 +38,7 @@ module.exports = {
   },
   "style": {
     "categories": ["metadata content"],
-    "content": ["text"],
+    "content": ["#text"],
     "parent": ["<head>"]
   },
 
@@ -411,7 +411,7 @@ module.exports = {
   },
   "script": {
     "categories": ["flow content", "phrasing content", "metadata content"],
-    "content": ["text"]
+    "content": ["#text"]
   },
   "template": {
     "categories": ["metadata content", "flow content", "phrasing content"],
@@ -521,7 +521,7 @@ module.exports = {
     "parent": ["<select>"]
   },
   "option": {
-    "content": ["text"],
+    "content": ["#text"],
     "parent": ["<select>", "<optgroup>", "<datalist>"]
   },
   "output": {
@@ -541,7 +541,7 @@ module.exports = {
   },
   "textarea": {
     "categories": ["flow content", "phrasing content", "interactive content", "form-associated content", "listed", "labelable", "submittable", "resettable"],
-    "content": ["text"]
+    "content": ["#text"]
   },
 
   "details": {
