@@ -1,12 +1,18 @@
-# html-node
+# html
 
 Information about the node types used in HTML - what categories do elements or
 nodes belong to, can you put a given node inside another node etc.
 
-Mostly for elements but functions can also take a `nodeName` eg. `#text`
+Mostly for elements but functions can also take a nodeName eg. #text
+
+## Install
+
+`npm install @mojule/html`
+
+## Example
 
 ```javascript
-const info = require( 'html-node' )
+const info = require( '@mojule/html' )
 
 // tagNames() => [string]
 console.log( info.tagNames() )

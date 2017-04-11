@@ -1,12 +1,13 @@
 'use strict';
 
-var hinfo = require('hinfo');
+var is = require('@mojule/is');
+var info = require('./info');
 
 var nodeDefs = {
   '#document': {
-    'content': ['#documentType', '<html>']
+    'content': ['#document-type', '<html>']
   },
-  '#documentType': {
+  '#document-type': {
     'parent': ['#document']
   },
   '#text': {
@@ -15,7 +16,7 @@ var nodeDefs = {
   '#comment': {
     'categories': ['flow content']
   },
-  '#documentFragment': {
+  '#document-fragment': {
     'content': ['flow content']
   }
 };
@@ -30,7 +31,7 @@ var ensureProperties = function ensureProperties(def) {
   ensureArray(def, 'parent');
 };
 
-var defaultDefs = Object.assign(hinfo(), nodeDefs);
+var defaultDefs = Object.assign({}, info, nodeDefs);
 
 var Html = function Html() {
   var defs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultDefs;
@@ -139,7 +140,11 @@ var Html = function Html() {
       return maps.container[tagName];
     },
     accepts: function accepts(tagName, childTagName) {
-      return maps.accepts[tagName][childTagName];
+      var from = maps.accepts[tagName];
+
+      if (is.undefined(from)) return;
+
+      return from[childTagName];
     },
     def: function def(tagName) {
       if (defs[tagName]) return JSON.parse(JSON.stringify(defs[tagName]));
@@ -148,5 +153,7 @@ var Html = function Html() {
 
   return api;
 };
+
+Object.assign(Html, Html());
 
 module.exports = Html;
