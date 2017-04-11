@@ -17,7 +17,7 @@ const nodeDefs = {
     'categories': [ 'flow content' ]
   },
   '#document-fragment': {
-    'content': [ 'flow content' ]
+    'content': [ '*' ]
   }
 }
 
@@ -57,6 +57,9 @@ const Html = ( defs = defaultDefs ) => {
 
     const def = defs[ tagName ]
     const childDef = defs[ childTagName ]
+
+    if( def.content.includes( '*') )
+      return true
 
     if( childDef.parent.includes( `<${ tagName }>` ) ) return true
 

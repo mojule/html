@@ -17,7 +17,7 @@ var nodeDefs = {
     'categories': ['flow content']
   },
   '#document-fragment': {
-    'content': ['flow content']
+    'content': ['*']
   }
 };
 
@@ -70,6 +70,8 @@ var Html = function Html() {
 
     var def = defs[tagName];
     var childDef = defs[childTagName];
+
+    if (def.content.includes('*')) return true;
 
     if (childDef.parent.includes('<' + tagName + '>')) return true;
 
