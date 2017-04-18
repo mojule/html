@@ -75,4 +75,10 @@ describe( 'HTML info', () => {
       assert( html.accepts( '#document-fragment', childName ) )
     })
   })
+
+  it( 'template accepts everything', () => {
+    html.tagNames().forEach( childName => {
+      assert( html.accepts( 'template', childName ) )
+    })
+  })
 })

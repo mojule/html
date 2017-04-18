@@ -415,7 +415,7 @@ module.exports = {
   },
   "template": {
     "categories": ["metadata content", "flow content", "phrasing content"],
-    "content": ["metadata content", "flow content"],
+    "content": ["*"],
     "parent": ["body", "head", "colgroup"],
     "nospec": ["4.01"]
   },
